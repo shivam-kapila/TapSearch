@@ -3,14 +3,16 @@ var express = require("express"),
     app = express()
     
     port = process.env.PORT || 3000
-    ip = process.env.IP;
+    ip = process.env.IP
+    
+    indexRoutes = require("./routes/indexRoutes");;
 
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 
-console.log(process.env.PORT);
+app.use("/", indexRoutes);
 
 app.listen(port, ip, () => {
-    console.log("Port up at: ", port);
+    console.log("Port up at:", port);
 });
