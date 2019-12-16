@@ -5,5 +5,14 @@
 }
 
 .btn {
-    margin: 20px auto;    
+    margin: 20px 0;   
+    margin-left: 20px; 
+}
+
+strong p{
+    margin-top: 80px;
+}
+.wrapped {
+    white-space: pre-wrap;
+    text-align: justify;
 }

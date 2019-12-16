@@ -1,0 +1,21 @@
+<%- include ("./partials/header.ejs") %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form action="/search" method="GET">
+                <div class="form-group">
+                    <label for="input_text">Enter the search element:</label>
+                    <input type="text" name="search_item" id="search_item" class="form-control">
+                    <input type="submit" value="Search" class="btn btn-sm btn-info float-right">
+                    <input type="submit" value="Clear" class="btn btn-sm btn-light float-right" formaction="/clear">
+                </div>
+            </form>
+            <strong>
+                <p>Input Text:</p>
+            </strong>
+            <p class = "wrapped"><%- inputText %></p>
+
+        </div>
+    </div>
+
+</div>

@@ -3,36 +3,48 @@ var express = require("express"),
     
 var input_text,
     docs = {},
-    words = {};
+    words = {},
+    search_word_indices = [];
 
 router.get("/",  (req, res) => {
     res.render('home');
 });
 
 router.get("/index", indexDocuments, indexWords, (req, res) => {
-    res.send({"indexedDocuments":docs, "indexedWords": words});
+    res.render("indexedResult",{"inputText": input_text, "indexedDocuments":docs, "indexedWords": words});
+})
+
+router.get("/search", searchWord, (req, res) => {
+    // res.render("searchResult", { "inputText": input_text, "indexedDocuments": docs, "indexedWords": words });
+    res.send( { "inputText": input_text, "indexedDocuments": docs, "indexedWords": words, "searchWordIndices": search_word_indices });
+})
+
+router.get("/clear", (req, res) => {
+    input_text = "";
+    docs = {};
+    words = {};
+    res.redirect("/");
 })
 
 function indexDocuments(req, res, next){
     input_text = req.query.input_text;
+    input_text = input_text.replace(/[^\w\s]|_/g, "")
+    console.log(input_text)
     input_text_split = input_text.split("\r\n\r\n");
-    i = 0;
+    i = 1;
     input_text_split.forEach((inp) =>{
-        docs[i] = input_text_split[i];
+        docs[i] = input_text_split[i-1];
         i++;
     })
-    console.log(docs[2])
     return next();
 }
 
 function indexWords(req, res, next){
-    // console.log(docs)
     for (let current_doc_index  in docs){
         current_doc = docs[current_doc_index];
-        // console.log(current_doc)
         current_doc_words = current_doc.split(" ");
         current_doc_words.forEach((current_word) => {
-            doc_indices = []
+            current_word = current_word.toLowerCase();
             if (!(current_word in words)) {
                 words[current_word]= [];
             }
@@ -41,7 +53,17 @@ function indexWords(req, res, next){
             }
         });
     }
-    // console.log(words)
+    console.log(words)
+    return next();
+}
+
+function searchWord(req, res, next){
+    search_item = req.query.search_item;
+    console.log(words[search_item])
+    search_word_indices = words[search_item];
+    if(search_word_indices.length > 10){
+        search_word_indices.slice(0,10);
+    }
     return next();
 }
 
