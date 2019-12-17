@@ -2,7 +2,7 @@
 A search application, similar to ElasticSearch built in Javascript. It takes in multiple paragraphs of text, assigns a unique ID To each paragraph and stores the words to paragraph mappings on an inverted index. The working can be viewed at :
 [https://tapsearchsk.herokuapp.com/](https://tapsearchsk.herokuapp.com/ "TapSearch")
 
-***
+  
 
 # Getting Started
 To run the project on your local machine go through the following steps:  
@@ -28,7 +28,7 @@ node app.js
  
 **5. Enter the required inputs for inverted indexing the documents and search for the required word thereafter.** 
 
-***
+  
 
 # APIs
 
