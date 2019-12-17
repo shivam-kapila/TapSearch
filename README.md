@@ -33,8 +33,8 @@ node app.js
 
 Tap Search has the following APIs:
 
-**1. clear (```/clear```)** - Clear the index and all indexed documents.
+**1. clear (```/api/clear```)** - Clear the index and all indexed documents.
 
-**2. index (```/index```)** - Index a given document (After having split the input into paragraphs a.k.a documents)
+**2. index (```/api/index```)** - Index a given document (After having split the input into paragraphs a.k.a documents)
 
-**3. search (```/search```)** - Given a word, search for it and retrieve the top 10 paragraphs (Documents) that contain it. (```/index``` needs to be called before ```/search```).
+**3. search (```/apieeee/search```)** - Given a word, search for it and retrieve the top 10 paragraphs (Documents) that contain it. (```/index``` needs to be called before ```/search```).
