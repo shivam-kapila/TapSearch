@@ -36,6 +36,7 @@ function indexDocuments(req, res, next){
         docs[i] = input_text_split[i-1];
         i++;
     })
+    console.log("1")
     return next();
 }
 
