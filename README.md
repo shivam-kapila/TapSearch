@@ -37,4 +37,4 @@ Tap Search has the following APIs:
 
 **2. index (```/index```)** - Index a given document (After having split the input into paragraphs a.k.a documents)
 
-**3. search (```/search```)** - Given a word, search for it and retrieve the top 10 paragraphs (Documents) that contain it. (```/index``` needs to be called before ```/search```)
+**3. search (```/search```)** - Given a word, search for it and retrieve the top 10 paragraphs (Documents) that contain it. (```/index``` needs to be called before ```/search```).

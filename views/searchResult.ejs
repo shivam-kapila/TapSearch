@@ -2,13 +2,17 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8">
-            <span>
-                <strong>
-                    Search word:
-                </strong>
-                <%- searchWord %>
-            </span>
-            <input type="submit" value="Clear Index" class="btn btn-sm btn-light float-right" formaction="/clear">
+            <form action="/clear" method="GET">
+               <div class="form-inline">
+                   <span>
+                        <strong>
+                            Search word:
+                        </strong>
+                        <%- searchWord %>
+                    </span>
+                    <input type="submit" value="Clear Index" class="btn btn-sm btn-light ml-auto mr-0 float-right">
+               </div> 
+            </form>
             <strong>
                 <p>
                     Search Result:
