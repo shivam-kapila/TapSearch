@@ -5,6 +5,7 @@ var input_text,
     docs = {},
     words = {},
     search_word_indices = [];
+    search_word_docs = [];
 
 router.get("/",  (req, res) => {
     res.render('home');
@@ -16,7 +17,7 @@ router.get("/index", indexDocuments, indexWords, (req, res) => {
 
 router.get("/search", searchWord, (req, res) => {
     search_word = req.query.search_word;
-    res.render("searchResult", { "inputText": input_text, "indexedDocuments": docs, "indexedWords": words, "searchWordIndices": search_word_indices, "searchWord": search_word });
+    res.render("searchResult", {"inputText": input_text, "indexedDocuments": docs, "indexedWords": words, "searchWord": search_word, "searchWordDocs": search_word_docs});
 })
 
 router.get("/clear", (req, res) => {
@@ -64,6 +65,10 @@ function searchWord(req, res, next){
     if(search_word_indices.length > 10){
         search_word_indices = search_word_indices.slice(0,10);
     }
+    search_word_docs = []
+    search_word_indices.forEach((index) => {
+        search_word_docs.push(docs[index])
+    })
     return next();
 }
 

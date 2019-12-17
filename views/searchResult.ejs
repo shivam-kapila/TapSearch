@@ -2,27 +2,21 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8">
-            <p>
+            <span>
                 <strong>
                     Search word:
                 </strong>
                 <%- searchWord %>
-                <input type="submit" value="Clear Index" class="btn btn-sm btn-light float-right" formaction="/clear">
-            </p>
+            </span>
+            <input type="submit" value="Clear Index" class="btn btn-sm btn-light float-right" formaction="/clear">
             <strong>
+                <p>
                     Search Result:
-            </strong>
-            <ul>
-                <% searchWordIndices.forEach((index) => { %>
-                    <li>Paragraph <%- index %></li>
-                <% }) %>
-            </ul>
-            <strong>
-                <p>Formatted Text:</p>
+                </p>
             </strong>
             <p>
-                <%  for (let currentDocIndex  in indexedDocuments){
-                        currentDoc = indexedDocuments[currentDocIndex];
+                <%  for (let currentDocIndex  in searchWordDocs){
+                        currentDoc = searchWordDocs[currentDocIndex];
                         currentDocWords = currentDoc.split(" ");
                         currentDocWords.forEach((currentWord) => {
                             if (currentWord.toLowerCase() == searchWord) {%>
