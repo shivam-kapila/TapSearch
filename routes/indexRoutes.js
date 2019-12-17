@@ -15,8 +15,8 @@ router.get("/index", indexDocuments, indexWords, (req, res) => {
 })
 
 router.get("/search", searchWord, (req, res) => {
-    // res.render("searchResult", { "inputText": input_text, "indexedDocuments": docs, "indexedWords": words });
-    res.send( { "inputText": input_text, "indexedDocuments": docs, "indexedWords": words, "searchWordIndices": search_word_indices });
+    search_word = req.query.search_word;
+    res.render("searchResult", { "inputText": input_text, "indexedDocuments": docs, "indexedWords": words, "searchWordIndices": search_word_indices, "searchWord": search_word });
 })
 
 router.get("/clear", (req, res) => {
@@ -53,16 +53,15 @@ function indexWords(req, res, next){
             }
         });
     }
-    console.log(words)
+    // console.log(words)
     return next();
 }
 
 function searchWord(req, res, next){
-    search_item = req.query.search_item;
-    console.log(words[search_item])
-    search_word_indices = words[search_item];
+    search_word = req.query.search_word;
+    search_word_indices = words[search_word];
     if(search_word_indices.length > 10){
-        search_word_indices.slice(0,10);
+        search_word_indices = search_word_indices.slice(0,10);
     }
     return next();
 }

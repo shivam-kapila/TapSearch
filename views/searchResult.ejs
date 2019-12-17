@@ -1,0 +1,44 @@
+<%- include ("./partials/header.ejs") %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <p>
+                <strong>
+                    Search word:
+                </strong>
+                <%- searchWord %>
+                <input type="submit" value="Clear Index" class="btn btn-sm btn-light float-right" formaction="/clear">
+            </p>
+            <strong>
+                    Search Result:
+            </strong>
+            <ul>
+                <% searchWordIndices.forEach((index) => { %>
+                    <li>Paragraph <%- index %></li>
+                <% }) %>
+            </ul>
+            <strong>
+                <p>Formatted Text:</p>
+            </strong>
+            <p>
+                <%  for (let currentDocIndex  in indexedDocuments){
+                        currentDoc = indexedDocuments[currentDocIndex];
+                        currentDocWords = currentDoc.split(" ");
+                        currentDocWords.forEach((currentWord) => {
+                            if (currentWord.toLowerCase() == searchWord) {%>
+                                <strong>
+                                    <%- currentWord %>
+                                </strong>
+                            <% } else { %>
+                                <%- currentWord %>
+                            <% }
+                        }); %>
+                    <br>
+                    <br> 
+                <% } %>
+            </p>
+        </div>
+        </div>
+    </div>
+
+</div>

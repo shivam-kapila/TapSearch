@@ -1,6 +1,5 @@
 
-.col-md-6 {
-    width: 33%;
+.col-md-8{
     margin: 50px auto;
 }
 
@@ -9,10 +8,14 @@
     margin-left: 20px; 
 }
 
-strong p{
-    margin-top: 80px;
+form {
+    margin-bottom: 80px;
 }
+
 .wrapped {
     white-space: pre-wrap;
+}
+
+p {
     text-align: justify;
 }

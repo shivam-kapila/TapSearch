@@ -1,13 +1,13 @@
 <%- include ("./partials/header.ejs") %>
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-8">
             <form action="/search" method="GET">
                 <div class="form-group">
-                    <label for="input_text">Enter the search element:</label>
-                    <input type="text" name="search_item" id="search_item" class="form-control">
+                    <label for="search_word">Enter the word to be searched:</label>
+                    <input type="text" name="search_word" id="search_word" class="form-control">
                     <input type="submit" value="Search" class="btn btn-sm btn-info float-right">
-                    <input type="submit" value="Clear" class="btn btn-sm btn-light float-right" formaction="/clear">
+                    <input type="submit" value="Clear Index" class="btn btn-sm btn-light float-right" formaction="/clear">
                 </div>
             </form>
             <strong>
