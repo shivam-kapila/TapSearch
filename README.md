@@ -1,6 +1,5 @@
 # TapSearch
-A search application, similar to ElasticSearch built-in Javascript. It takes in multiple paragraphs of text, assigns a unique ID To each paragraph and stores the words to paragraph mappings on an inverted index. The working can be viewed at :
-[https://tapsearchsk.herokuapp.com/](https://tapsearchsk.herokuapp.com/ "TapSearch")
+A search application, similar to ElasticSearch built-in Javascript. It takes in multiple paragraphs of text, assigns a unique ID To each paragraph and stores the words to paragraph mappings on an inverted index.
 
   
 
