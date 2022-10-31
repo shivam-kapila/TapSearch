@@ -21,10 +21,8 @@ git clone https://github.com/shivam-kapila/TapSearch
 node app.js
 ```  
 
-**4. Open the following localhost link in any browser window:**  
-```
-[http://localhost:3000/](https://localhost:3000/ "TapSearch") 
-```
+**4. Open the following localhost link in any browser window:** [http://localhost:3000/](https://localhost:3000/ "TapSearch") 
+
 
 **5. Enter the required inputs for inverted indexing the documents and search for the required word after that.** 
 
