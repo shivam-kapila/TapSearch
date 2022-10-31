@@ -22,8 +22,10 @@ node app.js
 ```  
 
 **4. Open the following localhost link in any browser window:**  
-[https://localhost:3000/](https://localhost:3000/ "TapSearch") 
- 
+```
+[http://localhost:3000/](https://localhost:3000/ "TapSearch") 
+```
+
 **5. Enter the required inputs for inverted indexing the documents and search for the required word after that.** 
 
   
